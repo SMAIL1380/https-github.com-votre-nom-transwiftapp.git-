@@ -1,0 +1,241 @@
+.ml-dashboard {
+  padding: 24px;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+}
+
+.dashboard-header h1 {
+  margin: 0;
+  color: #1F2937;
+}
+
+.refresh-button {
+  padding: 8px 16px;
+  background: #4F46E5;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.refresh-button:hover {
+  background: #4338CA;
+}
+
+.model-selector {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.model-button {
+  padding: 8px 16px;
+  border: 2px solid #E5E7EB;
+  border-radius: 8px;
+  background: white;
+  color: #4B5563;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.model-button:hover {
+  border-color: #4F46E5;
+  color: #4F46E5;
+}
+
+.model-button.active {
+  background: #4F46E5;
+  border-color: #4F46E5;
+  color: white;
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 24px;
+}
+
+.section {
+  background: white;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+}
+
+.section h2 {
+  margin: 0 0 20px 0;
+  color: #1F2937;
+  font-size: 20px;
+}
+
+/* Métriques */
+.metrics-container {
+  display: grid;
+  gap: 20px;
+}
+
+.metrics-card {
+  padding: 20px;
+  background: #F9FAFB;
+  border-radius: 12px;
+}
+
+.metrics-card h3 {
+  margin: 0 0 16px 0;
+  color: #1F2937;
+}
+
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.metric {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.metric .label {
+  color: #6B7280;
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+.metric .value {
+  font-size: 18px;
+  font-weight: 500;
+  color: #1F2937;
+}
+
+.last-training {
+  margin-top: 16px;
+  color: #6B7280;
+  font-size: 14px;
+  text-align: center;
+}
+
+/* Prédictions */
+.prediction-card {
+  padding: 20px;
+  background: #F9FAFB;
+  border-radius: 12px;
+}
+
+.prediction-card h3 {
+  margin: 0 0 16px 0;
+  color: #1F2937;
+}
+
+.prediction-value {
+  font-size: 24px;
+  font-weight: 500;
+  color: #1F2937;
+  margin-bottom: 16px;
+}
+
+.confidence {
+  font-size: 14px;
+  color: #6B7280;
+  margin-left: 8px;
+}
+
+.factors-list {
+  display: grid;
+  gap: 12px;
+}
+
+.factor {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px;
+  background: white;
+  border-radius: 8px;
+}
+
+.factor-name {
+  color: #4B5563;
+}
+
+.factor-impact {
+  font-weight: 500;
+}
+
+/* Performance */
+.performance-card {
+  padding: 20px;
+  background: #F9FAFB;
+  border-radius: 12px;
+}
+
+.performance-metrics {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.suggestions-list {
+  display: grid;
+  gap: 16px;
+}
+
+.suggestion {
+  padding: 16px;
+  background: white;
+  border-radius: 8px;
+  border-left: 4px solid #4F46E5;
+}
+
+.suggestion .type {
+  font-weight: 500;
+  color: #4F46E5;
+  font-size: 14px;
+}
+
+.suggestion p {
+  margin: 8px 0;
+  color: #4B5563;
+}
+
+.suggestion .improvement {
+  font-size: 14px;
+  color: #059669;
+}
+
+.loading-state,
+.error-state {
+  text-align: center;
+  padding: 40px;
+  color: #6B7280;
+}
+
+.error-state {
+  color: #DC2626;
+  background: #FEE2E2;
+  border-radius: 8px;
+}
+
+@media (max-width: 768px) {
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .metrics-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .performance-metrics {
+    grid-template-columns: 1fr;
+  }
+}

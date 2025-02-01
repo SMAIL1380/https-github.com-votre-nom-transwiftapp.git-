@@ -1,0 +1,284 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id            String      @id @default(uuid())
+  email         String      @unique
+  password      String
+  firstName     String
+  lastName      String
+  phone         String?
+  role          UserRole    @default(CLIENT)
+  createdAt     DateTime    @default(now())
+  updatedAt     DateTime    @updatedAt
+  isVerified    Boolean     @default(false)
+  isActive      Boolean     @default(true)
+  avatar        String?
+  address       String?
+  city          String?
+  country       String?
+  postalCode    String?
+  
+  // Relations
+  deliveries    Delivery[]  @relation("ClientDeliveries")
+  driverDeliveries Delivery[] @relation("DriverDeliveries")
+  notifications Notification[]
+  documents     Document[]
+  vehicle       Vehicle?    @relation("DriverVehicle")
+  ratings       Rating[]    @relation("UserRatings")
+  givenRatings  Rating[]    @relation("RaterRatings")
+  payments      Payment[]
+  sessions      Session[]
+  auditLogs     AuditLog[]
+}
+
+enum UserRole {
+  CLIENT
+  DRIVER
+  ADMIN
+  SUPPORT
+}
+
+model Vehicle {
+  id            String    @id @default(uuid())
+  type          VehicleType
+  brand         String
+  model         String
+  licensePlate  String    @unique
+  capacity      Float
+  year          Int
+  isActive      Boolean   @default(true)
+  
+  // Relations
+  driver        User      @relation("DriverVehicle", fields: [driverId], references: [id])
+  driverId      String    @unique
+  documents     Document[]
+  maintenanceLogs MaintenanceLog[]
+}
+
+enum VehicleType {
+  CAR
+  VAN
+  TRUCK
+  MOTORCYCLE
+}
+
+model Delivery {
+  id            String      @id @default(uuid())
+  trackingNumber String     @unique
+  status        DeliveryStatus
+  pickupAddress String
+  dropoffAddress String
+  pickupLocation Json       // Coordonnées GPS {lat: float, lng: float}
+  dropoffLocation Json      // Coordonnées GPS {lat: float, lng: float}
+  recipientName String
+  recipientPhone String
+  packageSize   PackageSize
+  urgency       UrgencyLevel
+  price         Float
+  distance      Float?      // En kilomètres
+  estimatedDeliveryTime DateTime
+  actualDeliveryTime   DateTime?
+  notes         String?
+  signature     String?     // URL de la signature
+  proofOfDelivery String?  // URL de la photo
+  
+  // Relations
+  client        User        @relation("ClientDeliveries", fields: [clientId], references: [id])
+  clientId      String
+  driver        User?       @relation("DriverDeliveries", fields: [driverId], references: [id])
+  driverId      String?
+  statusUpdates DeliveryStatusUpdate[]
+  documents     Document[]
+  payment       Payment?
+  ratings       Rating[]
+}
+
+model DeliveryStatusUpdate {
+  id          String      @id @default(uuid())
+  status      DeliveryStatus
+  location    Json?       // Coordonnées GPS {lat: float, lng: float}
+  notes       String?
+  createdAt   DateTime    @default(now())
+  
+  // Relations
+  delivery    Delivery    @relation(fields: [deliveryId], references: [id])
+  deliveryId  String
+}
+
+enum DeliveryStatus {
+  PENDING
+  ACCEPTED
+  PICKED_UP
+  IN_TRANSIT
+  DELIVERED
+  CANCELLED
+  FAILED
+  RETURNED
+}
+
+enum PackageSize {
+  SMALL
+  MEDIUM
+  LARGE
+  EXTRA_LARGE
+}
+
+enum UrgencyLevel {
+  NORMAL
+  EXPRESS
+  PRIORITY
+}
+
+model Document {
+  id          String      @id @default(uuid())
+  type        DocumentType
+  url         String
+  filename    String
+  mimeType    String
+  size        Int
+  createdAt   DateTime    @default(now())
+  
+  // Relations
+  user        User?       @relation(fields: [userId], references: [id])
+  userId      String?
+  delivery    Delivery?   @relation(fields: [deliveryId], references: [id])
+  deliveryId  String?
+  vehicle     Vehicle?    @relation(fields: [vehicleId], references: [id])
+  vehicleId   String?
+}
+
+enum DocumentType {
+  ID_CARD
+  DRIVER_LICENSE
+  VEHICLE_REGISTRATION
+  INSURANCE
+  PROOF_OF_DELIVERY
+  SIGNATURE
+  OTHER
+}
+
+model Payment {
+  id          String      @id @default(uuid())
+  amount      Float
+  currency    String      @default("EUR")
+  status      PaymentStatus
+  method      PaymentMethod
+  transactionId String?
+  createdAt   DateTime    @default(now())
+  paidAt      DateTime?
+  
+  // Relations
+  user        User        @relation(fields: [userId], references: [id])
+  userId      String
+  delivery    Delivery    @relation(fields: [deliveryId], references: [id])
+  deliveryId  String      @unique
+}
+
+enum PaymentStatus {
+  PENDING
+  COMPLETED
+  FAILED
+  REFUNDED
+}
+
+enum PaymentMethod {
+  CREDIT_CARD
+  BANK_TRANSFER
+  PAYPAL
+  CASH
+}
+
+model Rating {
+  id          String      @id @default(uuid())
+  score       Int         // 1-5
+  comment     String?
+  createdAt   DateTime    @default(now())
+  
+  // Relations
+  user        User        @relation("UserRatings", fields: [userId], references: [id])
+  userId      String
+  rater       User        @relation("RaterRatings", fields: [raterId], references: [id])
+  raterId     String
+  delivery    Delivery    @relation(fields: [deliveryId], references: [id])
+  deliveryId  String
+}
+
+model Notification {
+  id          String      @id @default(uuid())
+  type        NotificationType
+  title       String
+  message     String
+  read        Boolean     @default(false)
+  createdAt   DateTime    @default(now())
+  data        Json?
+  
+  // Relations
+  user        User        @relation(fields: [userId], references: [id])
+  userId      String
+}
+
+enum NotificationType {
+  DELIVERY_UPDATE
+  STATUS_CHANGE
+  PAYMENT
+  MESSAGE
+  SYSTEM
+}
+
+model Session {
+  id          String      @id @default(uuid())
+  token       String      @unique
+  device      String?
+  ip          String?
+  lastActive  DateTime    @default(now())
+  expiresAt   DateTime
+  
+  // Relations
+  user        User        @relation(fields: [userId], references: [id])
+  userId      String
+}
+
+model MaintenanceLog {
+  id          String      @id @default(uuid())
+  type        MaintenanceType
+  description String
+  cost        Float?
+  date        DateTime
+  nextDueDate DateTime?
+  
+  // Relations
+  vehicle     Vehicle     @relation(fields: [vehicleId], references: [id])
+  vehicleId   String
+}
+
+enum MaintenanceType {
+  ROUTINE
+  REPAIR
+  INSPECTION
+  OTHER
+}
+
+model AuditLog {
+  id          String      @id @default(uuid())
+  action      String
+  details     Json
+  ip          String?
+  createdAt   DateTime    @default(now())
+  
+  // Relations
+  user        User        @relation(fields: [userId], references: [id])
+  userId      String
+}

@@ -1,0 +1,78 @@
+.performance-chart-container {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.chart-header {
+  margin-bottom: 20px;
+}
+
+.chart-header h3 {
+  color: #1F2937;
+  font-size: 18px;
+  margin: 0 0 16px 0;
+}
+
+.performance-indicators {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.indicator {
+  display: flex;
+  flex-direction: column;
+  padding: 12px;
+  border-radius: 8px;
+  background: #F9FAFB;
+  transition: all 0.2s ease;
+}
+
+.indicator:hover {
+  transform: translateY(-2px);
+}
+
+.indicator.low {
+  background: #DBEAFE;
+  color: #1E40AF;
+}
+
+.indicator.medium {
+  background: #FEF3C7;
+  color: #92400E;
+}
+
+.indicator.high {
+  background: #FEE2E2;
+  color: #991B1B;
+}
+
+.indicator-label {
+  font-size: 12px;
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+.indicator-value {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.chart-container {
+  position: relative;
+  height: 300px;
+  width: 100%;
+}
+
+@media (max-width: 640px) {
+  .performance-indicators {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .chart-container {
+    height: 250px;
+  }
+}

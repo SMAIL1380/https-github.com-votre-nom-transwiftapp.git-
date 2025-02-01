@@ -1,0 +1,240 @@
+.advantages {
+  padding: 6rem 2rem;
+  background: white;
+}
+
+.advantages-header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 4rem;
+}
+
+.advantages-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  max-width: 1280px;
+  margin: 0 auto 4rem;
+}
+
+.advantage-card {
+  background: #F9FAFB;
+  padding: 2rem;
+  border-radius: 1rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.advantage-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+.advantage-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.advantage-icon i {
+  font-size: 1.5rem;
+  color: white;
+}
+
+.advantage-content h3 {
+  color: #1F2937;
+  margin-bottom: 0.5rem;
+}
+
+.advantage-content p {
+  color: #6B7280;
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+.comparison-table {
+  max-width: 800px;
+  margin: 4rem auto;
+  text-align: center;
+}
+
+.comparison-table h3 {
+  color: #1F2937;
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.table-container {
+  background: #F9FAFB;
+  border-radius: 1rem;
+  padding: 2rem;
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid #E5E7EB;
+}
+
+th {
+  color: #1F2937;
+  font-weight: 600;
+}
+
+td {
+  color: #6B7280;
+}
+
+td.highlight {
+  color: #4F46E5;
+  font-weight: 500;
+}
+
+.fa-check {
+  color: #10B981;
+}
+
+.fa-times {
+  color: #EF4444;
+}
+
+.stats-banner {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  max-width: 1280px;
+  margin: 4rem auto;
+  padding: 3rem;
+  background: #4F46E5;
+  border-radius: 1rem;
+  color: white;
+}
+
+.stat {
+  text-align: center;
+}
+
+.stat-number {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.stat-label {
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+.guarantee {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  max-width: 800px;
+  margin: 4rem auto 0;
+  padding: 2rem;
+  background: #F9FAFB;
+  border-radius: 1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.guarantee-icon {
+  width: 80px;
+  height: 80px;
+  background: #4F46E5;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.guarantee-icon i {
+  font-size: 2rem;
+  color: white;
+}
+
+.guarantee-content {
+  flex: 1;
+}
+
+.guarantee-content h3 {
+  color: #1F2937;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.guarantee-content p {
+  color: #6B7280;
+  margin-bottom: 1.5rem;
+}
+
+.guarantee-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: transparent;
+  color: #4F46E5;
+  padding: 0.75rem 1.5rem;
+  border: 2px solid #4F46E5;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.guarantee-button:hover {
+  background: #4F46E5;
+  color: white;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 1024px) {
+  .advantages-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .stats-banner {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .advantages {
+    padding: 4rem 1rem;
+  }
+
+  .advantages-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .stats-banner {
+    grid-template-columns: 1fr;
+    padding: 2rem;
+  }
+
+  .guarantee {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .table-container {
+    padding: 1rem;
+  }
+
+  th, td {
+    padding: 0.75rem;
+    font-size: 0.875rem;
+  }
+}

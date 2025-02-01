@@ -1,0 +1,239 @@
+.prediction-dashboard {
+  padding: 24px;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+}
+
+.dashboard-header h1 {
+  margin: 0;
+  color: #1F2937;
+}
+
+.refresh-button {
+  padding: 8px 16px;
+  background: #4F46E5;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.refresh-button:hover {
+  background: #4338CA;
+}
+
+.predictions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 24px;
+}
+
+.prediction-card {
+  background: white;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+}
+
+.prediction-card h2 {
+  margin: 0 0 20px 0;
+  color: #1F2937;
+  font-size: 20px;
+}
+
+/* Prédictions de livraison */
+.time-slots {
+  display: grid;
+  gap: 16px;
+}
+
+.time-slot {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 12px;
+  align-items: center;
+  padding: 12px;
+  background: #F9FAFB;
+  border-radius: 8px;
+}
+
+.time {
+  font-weight: 500;
+  color: #1F2937;
+}
+
+.demand-indicator {
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 500;
+  color: white;
+}
+
+.orders {
+  color: #4B5563;
+}
+
+.confidence {
+  color: #6B7280;
+  font-size: 14px;
+}
+
+/* Facteurs d'influence */
+.weather-impact {
+  margin-bottom: 20px;
+}
+
+.impact {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  border-radius: 8px;
+  margin-top: 8px;
+}
+
+.impact.positive {
+  background: #ECFDF5;
+  color: #059669;
+}
+
+.impact.negative {
+  background: #FEF2F2;
+  color: #DC2626;
+}
+
+.impact.neutral {
+  background: #F3F4F6;
+  color: #4B5563;
+}
+
+.events-impact .event {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px solid #E5E7EB;
+}
+
+.event-impact {
+  font-weight: 500;
+}
+
+/* Suggestions d'optimisation */
+.suggestions-list {
+  display: grid;
+  gap: 16px;
+}
+
+.suggestion-item {
+  padding: 16px;
+  border-radius: 12px;
+  border-left: 4px solid;
+}
+
+.suggestion-item.priority-high {
+  background: #FEF2F2;
+  border-left-color: #DC2626;
+}
+
+.suggestion-item.priority-medium {
+  background: #FEF3C7;
+  border-left-color: #D97706;
+}
+
+.suggestion-item.priority-low {
+  background: #ECFDF5;
+  border-left-color: #059669;
+}
+
+.suggestion-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.suggestion-type {
+  font-weight: 500;
+  color: #1F2937;
+}
+
+.suggestion-priority {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.suggestion-impact {
+  margin-top: 8px;
+  font-size: 14px;
+}
+
+.impact-label {
+  color: #6B7280;
+}
+
+.impact-value {
+  margin-left: 8px;
+  font-weight: 500;
+  color: #059669;
+}
+
+/* Hotspots */
+.hotspots-list {
+  display: grid;
+  gap: 12px;
+}
+
+.hotspot-item {
+  padding: 16px;
+  background: #F9FAFB;
+  border-radius: 8px;
+}
+
+.hotspot-type {
+  font-weight: 500;
+  color: #1F2937;
+  margin-bottom: 8px;
+}
+
+.hotspot-intensity {
+  color: #4B5563;
+  font-size: 14px;
+}
+
+.hotspot-duration {
+  color: #6B7280;
+  font-size: 14px;
+  margin-top: 4px;
+}
+
+.loading-state,
+.error-state {
+  text-align: center;
+  padding: 40px;
+  color: #6B7280;
+}
+
+.error-state {
+  color: #DC2626;
+  background: #FEE2E2;
+  border-radius: 8px;
+}
+
+@media (max-width: 768px) {
+  .predictions-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .time-slot {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+}

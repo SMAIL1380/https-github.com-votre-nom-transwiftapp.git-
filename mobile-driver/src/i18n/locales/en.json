@@ -1,0 +1,125 @@
+{
+  "translation": {
+    "common": {
+      "ok": "OK",
+      "cancel": "Cancel",
+      "save": "Save",
+      "delete": "Delete",
+      "edit": "Edit",
+      "loading": "Loading...",
+      "retry": "Retry",
+      "search": "Search",
+      "noResults": "No results",
+      "back": "Back",
+      "next": "Next",
+      "done": "Done"
+    },
+    "auth": {
+      "login": "Login",
+      "logout": "Logout",
+      "email": "Email",
+      "password": "Password",
+      "forgotPassword": "Forgot password?",
+      "loginError": "Login error"
+    },
+    "home": {
+      "title": "Home",
+      "welcome": "Welcome",
+      "todayDeliveries": "Today's deliveries",
+      "upcomingDeliveries": "Upcoming deliveries",
+      "noDeliveries": "No deliveries",
+      "scan": "Scan",
+      "battery": {
+        "low": "Low battery",
+        "charging": "Charging",
+        "optimizing": "Battery optimization"
+      }
+    },
+    "delivery": {
+      "status": {
+        "pending": "Pending",
+        "inProgress": "In progress",
+        "completed": "Completed",
+        "failed": "Failed",
+        "cancelled": "Cancelled"
+      },
+      "details": {
+        "title": "Delivery details",
+        "customer": "Customer",
+        "address": "Address",
+        "time": "Time",
+        "notes": "Notes",
+        "signature": "Signature",
+        "photo": "Photo"
+      },
+      "actions": {
+        "start": "Start",
+        "complete": "Complete",
+        "cancel": "Cancel",
+        "takePhoto": "Take photo",
+        "getSignature": "Get signature"
+      }
+    },
+    "reporting": {
+      "title": "Reports",
+      "metrics": {
+        "title": "Metrics",
+        "deliveries": "Deliveries",
+        "success": "Success rate",
+        "avgTime": "Average time",
+        "distance": "Distance traveled"
+      },
+      "filters": {
+        "title": "Filters",
+        "dateRange": "Date range",
+        "status": "Status",
+        "type": "Type"
+      },
+      "export": {
+        "title": "Export",
+        "pdf": "PDF",
+        "csv": "CSV",
+        "success": "Export successful",
+        "error": "Export error"
+      }
+    },
+    "settings": {
+      "title": "Settings",
+      "general": {
+        "title": "General",
+        "language": "Language",
+        "notifications": "Notifications",
+        "theme": "Theme",
+        "sound": "Sound"
+      },
+      "privacy": {
+        "title": "Privacy",
+        "location": "Location",
+        "data": "Data",
+        "tracking": "Tracking"
+      },
+      "battery": {
+        "title": "Battery",
+        "optimization": "Optimization",
+        "locationTracking": "Location tracking",
+        "backgroundSync": "Background sync"
+      }
+    },
+    "error": {
+      "title": "Error",
+      "generic": "An error occurred",
+      "network": "Network error",
+      "location": "Location error",
+      "sync": "Sync error",
+      "retry": "Retry",
+      "report": "Report"
+    },
+    "notifications": {
+      "newDelivery": "New delivery",
+      "deliveryReminder": "Delivery reminder",
+      "batteryLow": "Low battery",
+      "syncComplete": "Sync complete",
+      "updateAvailable": "Update available"
+    }
+  }
+}

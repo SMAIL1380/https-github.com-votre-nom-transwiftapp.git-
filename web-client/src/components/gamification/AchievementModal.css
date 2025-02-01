@@ -1,0 +1,189 @@
+.achievement-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.75);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease-out;
+}
+
+.achievement-modal {
+  background: white;
+  border-radius: 16px;
+  padding: 24px;
+  max-width: 400px;
+  width: 90%;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  animation: slideUp 0.3s ease-out;
+}
+
+.achievement-header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.achievement-icon-large {
+  font-size: 64px;
+  margin-bottom: 16px;
+  animation: bounce 0.6s ease-out;
+}
+
+.achievement-content {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.achievement-content h3 {
+  color: #1F2937;
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+
+.achievement-description {
+  color: #6B7280;
+  margin-bottom: 20px;
+}
+
+.achievement-rewards {
+  margin: 20px 0;
+}
+
+.points-reward {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 20px;
+  color: #4F46E5;
+  font-weight: 600;
+}
+
+.points-icon {
+  animation: spin 1s ease-out;
+}
+
+.achievement-progress {
+  margin-top: 20px;
+}
+
+.progress-text {
+  font-size: 14px;
+  color: #6B7280;
+  margin-bottom: 8px;
+}
+
+.progress-bar-container {
+  background: #F3F4F6;
+  border-radius: 9999px;
+  height: 8px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  background: #4F46E5;
+  height: 100%;
+  border-radius: 9999px;
+  transition: width 0.3s ease-out;
+}
+
+.achievement-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.share-button,
+.close-button {
+  flex: 1;
+  padding: 12px;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.share-button {
+  background: #4F46E5;
+  color: white;
+  border: none;
+}
+
+.share-button:hover {
+  background: #4338CA;
+}
+
+.close-button {
+  background: white;
+  color: #4B5563;
+  border: 1px solid #D1D5DB;
+}
+
+.close-button:hover {
+  background: #F9FAFB;
+  border-color: #9CA3AF;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-20px);
+  }
+  60% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 640px) {
+  .achievement-modal {
+    width: 95%;
+    padding: 20px;
+  }
+
+  .achievement-icon-large {
+    font-size: 48px;
+  }
+
+  .achievement-content h3 {
+    font-size: 20px;
+  }
+
+  .points-reward {
+    font-size: 18px;
+  }
+}

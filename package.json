@@ -1,0 +1,23 @@
+node --version
+npm --version{
+  "name": "transwift-app",
+  "version": "1.0.0",
+  "description": "Modern delivery and transportation platform",
+  "private": true,
+  "workspaces": [
+    "backend",
+    "web-client",
+    "web-admin",
+    "mobile-apps/*"
+  ],
+  "scripts": {
+    "dev": "turbo run dev",
+    "build": "turbo run build",
+    "start": "turbo run start",
+    "test": "turbo run test",
+    "lint": "turbo run lint"
+  },
+  "devDependencies": {
+    "turbo": "^1.11.2"
+  }
+}

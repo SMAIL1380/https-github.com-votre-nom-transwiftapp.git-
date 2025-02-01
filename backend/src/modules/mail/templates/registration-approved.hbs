@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Inscription approuvée - TransWift</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .logo {
+            max-width: 200px;
+            margin-bottom: 20px;
+        }
+        .button {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: #1976D2;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            margin: 20px 0;
+        }
+        .footer {
+            margin-top: 40px;
+            text-align: center;
+            font-size: 12px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <img src="{{logoUrl}}" alt="TransWift Logo" class="logo">
+        <h1>Félicitations {{firstName}} !</h1>
+    </div>
+
+    <p>Nous sommes ravis de vous informer que votre inscription en tant que chauffeur partenaire TransWift a été approuvée.</p>
+
+    <p>Pour finaliser votre inscription et accéder à votre espace personnel, veuillez cliquer sur le bouton ci-dessous :</p>
+
+    <div style="text-align: center;">
+        <a href="{{activationLink}}" class="button">Activer mon compte</a>
+    </div>
+
+    <p><strong>Important :</strong> Ce lien est valable pendant 72 heures. Après ce délai, vous devrez contacter notre support pour obtenir un nouveau lien.</p>
+
+    <p>Une fois votre compte activé, vous pourrez :</p>
+    <ul>
+        <li>Accéder à l'application mobile TransWift Driver</li>
+        <li>Voir et accepter des livraisons</li>
+        <li>Gérer votre profil et vos documents</li>
+        <li>Suivre vos performances et vos gains</li>
+    </ul>
+
+    <p>Si vous avez des questions ou besoin d'assistance, n'hésitez pas à contacter notre équipe support :</p>
+    <ul>
+        <li>Email : support@transwift.com</li>
+        <li>Téléphone : +33 1 XX XX XX XX</li>
+    </ul>
+
+    <div class="footer">
+        <p>Cet email a été envoyé par TransWift SAS</p>
+        <p>{{address}}</p>
+        <p>© {{year}} TransWift. Tous droits réservés.</p>
+    </div>
+</body>
+</html>

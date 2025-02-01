@@ -1,0 +1,213 @@
+.deep-learning-dashboard {
+  padding: 24px;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+}
+
+.dashboard-header h1 {
+  margin: 0;
+  color: #1F2937;
+}
+
+.refresh-button {
+  padding: 8px 16px;
+  background: #4F46E5;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.refresh-button:hover {
+  background: #4338CA;
+}
+
+.dashboard-content {
+  display: grid;
+  gap: 24px;
+}
+
+/* Liste des modèles */
+.models-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  margin-top: 16px;
+}
+
+.model-card {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.model-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.model-card.selected {
+  border: 2px solid #4F46E5;
+}
+
+.model-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.model-header h3 {
+  margin: 0;
+  color: #1F2937;
+}
+
+.status {
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.status.training {
+  background: #FEF3C7;
+  color: #D97706;
+}
+
+.status.ready {
+  background: #ECFDF5;
+  color: #059669;
+}
+
+.status.error {
+  background: #FEE2E2;
+  color: #DC2626;
+}
+
+.model-info {
+  display: grid;
+  gap: 12px;
+}
+
+.info-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.info-item .label {
+  color: #6B7280;
+  font-size: 14px;
+}
+
+.info-item .value {
+  font-weight: 500;
+  color: #1F2937;
+}
+
+/* Métriques d'entraînement */
+.training-metrics {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  margin-top: 24px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.metrics-chart {
+  margin-top: 20px;
+}
+
+.metrics-table {
+  margin-top: 20px;
+  overflow-x: auto;
+}
+
+.metrics-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.metrics-table th,
+.metrics-table td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #E5E7EB;
+}
+
+.metrics-table th {
+  background: #F9FAFB;
+  font-weight: 500;
+  color: #4B5563;
+}
+
+.metrics-table td {
+  color: #1F2937;
+}
+
+/* Métadonnées du modèle */
+.model-metadata {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  margin-top: 24px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.metadata-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  margin-top: 16px;
+}
+
+.metadata-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.metadata-item .label {
+  color: #6B7280;
+  font-size: 14px;
+}
+
+.metadata-item .value {
+  font-weight: 500;
+  color: #1F2937;
+  font-size: 16px;
+}
+
+.loading-state,
+.error-state {
+  text-align: center;
+  padding: 40px;
+  color: #6B7280;
+}
+
+.error-state {
+  color: #DC2626;
+  background: #FEE2E2;
+  border-radius: 8px;
+}
+
+@media (max-width: 768px) {
+  .metadata-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .models-grid {
+    grid-template-columns: 1fr;
+  }
+}

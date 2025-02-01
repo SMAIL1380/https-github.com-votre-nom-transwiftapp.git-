@@ -1,0 +1,125 @@
+{
+  "translation": {
+    "common": {
+      "ok": "OK",
+      "cancel": "Annuler",
+      "save": "Enregistrer",
+      "delete": "Supprimer",
+      "edit": "Modifier",
+      "loading": "Chargement...",
+      "retry": "Réessayer",
+      "search": "Rechercher",
+      "noResults": "Aucun résultat",
+      "back": "Retour",
+      "next": "Suivant",
+      "done": "Terminé"
+    },
+    "auth": {
+      "login": "Connexion",
+      "logout": "Déconnexion",
+      "email": "Email",
+      "password": "Mot de passe",
+      "forgotPassword": "Mot de passe oublié ?",
+      "loginError": "Erreur de connexion"
+    },
+    "home": {
+      "title": "Accueil",
+      "welcome": "Bienvenue",
+      "todayDeliveries": "Livraisons du jour",
+      "upcomingDeliveries": "Prochaines livraisons",
+      "noDeliveries": "Aucune livraison",
+      "scan": "Scanner",
+      "battery": {
+        "low": "Batterie faible",
+        "charging": "En charge",
+        "optimizing": "Optimisation de la batterie"
+      }
+    },
+    "delivery": {
+      "status": {
+        "pending": "En attente",
+        "inProgress": "En cours",
+        "completed": "Terminée",
+        "failed": "Échouée",
+        "cancelled": "Annulée"
+      },
+      "details": {
+        "title": "Détails de la livraison",
+        "customer": "Client",
+        "address": "Adresse",
+        "time": "Heure",
+        "notes": "Notes",
+        "signature": "Signature",
+        "photo": "Photo"
+      },
+      "actions": {
+        "start": "Démarrer",
+        "complete": "Terminer",
+        "cancel": "Annuler",
+        "takePhoto": "Prendre une photo",
+        "getSignature": "Obtenir la signature"
+      }
+    },
+    "reporting": {
+      "title": "Rapports",
+      "metrics": {
+        "title": "Métriques",
+        "deliveries": "Livraisons",
+        "success": "Taux de réussite",
+        "avgTime": "Temps moyen",
+        "distance": "Distance parcourue"
+      },
+      "filters": {
+        "title": "Filtres",
+        "dateRange": "Période",
+        "status": "Statut",
+        "type": "Type"
+      },
+      "export": {
+        "title": "Exporter",
+        "pdf": "PDF",
+        "csv": "CSV",
+        "success": "Export réussi",
+        "error": "Erreur lors de l'export"
+      }
+    },
+    "settings": {
+      "title": "Paramètres",
+      "general": {
+        "title": "Général",
+        "language": "Langue",
+        "notifications": "Notifications",
+        "theme": "Thème",
+        "sound": "Son"
+      },
+      "privacy": {
+        "title": "Confidentialité",
+        "location": "Localisation",
+        "data": "Données",
+        "tracking": "Suivi"
+      },
+      "battery": {
+        "title": "Batterie",
+        "optimization": "Optimisation",
+        "locationTracking": "Suivi de localisation",
+        "backgroundSync": "Synchronisation en arrière-plan"
+      }
+    },
+    "error": {
+      "title": "Erreur",
+      "generic": "Une erreur est survenue",
+      "network": "Erreur de connexion",
+      "location": "Erreur de localisation",
+      "sync": "Erreur de synchronisation",
+      "retry": "Réessayer",
+      "report": "Signaler"
+    },
+    "notifications": {
+      "newDelivery": "Nouvelle livraison",
+      "deliveryReminder": "Rappel de livraison",
+      "batteryLow": "Batterie faible",
+      "syncComplete": "Synchronisation terminée",
+      "updateAvailable": "Mise à jour disponible"
+    }
+  }
+}

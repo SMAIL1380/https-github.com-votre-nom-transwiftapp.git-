@@ -1,0 +1,160 @@
+.leaderboard {
+  background: white;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+}
+
+.leaderboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.leaderboard-header h2 {
+  font-size: 24px;
+  color: #1f2937;
+  margin: 0;
+}
+
+.timeframe-selector {
+  display: flex;
+  gap: 8px;
+  background: #f3f4f6;
+  padding: 4px;
+  border-radius: 8px;
+}
+
+.timeframe-selector button {
+  padding: 8px 16px;
+  border: none;
+  background: transparent;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  color: #4b5563;
+  transition: all 0.2s ease;
+}
+
+.timeframe-selector button.active {
+  background: white;
+  color: #4f46e5;
+  box-shadow: 0 2px 4px rgb(0 0 0 / 0.05);
+}
+
+.timeframe-label {
+  color: #6b7280;
+  font-size: 14px;
+  margin-bottom: 16px;
+}
+
+.leaderboard-content {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.leaderboard-entry {
+  display: flex;
+  align-items: center;
+  padding: 16px;
+  background: #f9fafb;
+  border-radius: 12px;
+  transition: transform 0.2s ease;
+}
+
+.leaderboard-entry:hover {
+  transform: translateX(4px);
+}
+
+.leaderboard-entry.current-driver {
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+}
+
+.rank {
+  font-size: 20px;
+  font-weight: 700;
+  color: #1f2937;
+  width: 40px;
+}
+
+.rank sup {
+  font-size: 12px;
+  color: #6b7280;
+}
+
+.driver-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.avatar-placeholder {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #e5e7eb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  color: #4b5563;
+}
+
+.name {
+  font-weight: 500;
+  color: #1f2937;
+}
+
+.points {
+  font-weight: 600;
+  color: #4f46e5;
+}
+
+.rank-gold {
+  background: linear-gradient(135deg, #fef3c7 0%, #fef9c3 100%);
+}
+
+.rank-silver {
+  background: linear-gradient(135deg, #f1f5f9 0%, #f8fafc 100%);
+}
+
+.rank-bronze {
+  background: linear-gradient(135deg, #fff7ed 0%, #ffedd5 100%);
+}
+
+.loading-state,
+.error-state,
+.empty-state {
+  text-align: center;
+  padding: 40px;
+  color: #6b7280;
+}
+
+.error-state {
+  color: #dc2626;
+  background: #fee2e2;
+  border-radius: 8px;
+}
+
+@media (max-width: 640px) {
+  .leaderboard-header {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .timeframe-selector {
+    width: 100%;
+    justify-content: center;
+  }
+}

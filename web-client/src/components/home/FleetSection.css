@@ -1,0 +1,163 @@
+.fleet {
+  padding: 6rem 2rem;
+  background: white;
+}
+
+.fleet-header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 4rem;
+}
+
+.fleet-content {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.vehicle-selector {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  overflow-x: auto;
+  padding-bottom: 1rem;
+}
+
+.vehicle-button {
+  background: white;
+  border: 2px solid #E5E7EB;
+  border-radius: 0.75rem;
+  padding: 1rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 200px;
+}
+
+.vehicle-button:hover {
+  border-color: #4F46E5;
+}
+
+.vehicle-button.active {
+  background: #4F46E5;
+  border-color: #4F46E5;
+  color: white;
+}
+
+.vehicle-name {
+  font-weight: 600;
+  font-size: 1.125rem;
+}
+
+.vehicle-type {
+  font-size: 0.875rem;
+  opacity: 0.8;
+}
+
+.vehicle-details {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  background: #F9FAFB;
+  border-radius: 1rem;
+  padding: 2rem;
+}
+
+.vehicle-image {
+  position: relative;
+  border-radius: 0.75rem;
+  overflow: hidden;
+}
+
+.vehicle-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.vehicle-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.vehicle-info h3 {
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: #1F2937;
+}
+
+.vehicle-description {
+  color: #6B7280;
+  line-height: 1.6;
+}
+
+.specs-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.spec-item {
+  background: white;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.spec-label {
+  font-size: 0.875rem;
+  color: #6B7280;
+}
+
+.spec-value {
+  font-weight: 600;
+  color: #1F2937;
+}
+
+.reserve-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #4F46E5;
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 1rem;
+}
+
+.reserve-button:hover {
+  background: #4338CA;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 1024px) {
+  .vehicle-details {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .fleet {
+    padding: 4rem 1rem;
+  }
+
+  .vehicle-selector {
+    flex-wrap: nowrap;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .vehicle-button {
+    min-width: 150px;
+  }
+}

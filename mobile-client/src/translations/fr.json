@@ -1,0 +1,80 @@
+{
+  "auth": {
+    "login": "Connexion",
+    "register": "Inscription",
+    "forgotPassword": "Mot de passe oublié",
+    "verifyEmail": "Vérification email",
+    "emailPlaceholder": "Email",
+    "passwordPlaceholder": "Mot de passe",
+    "confirmPasswordPlaceholder": "Confirmer le mot de passe",
+    "firstNamePlaceholder": "Prénom",
+    "lastNamePlaceholder": "Nom",
+    "phonePlaceholder": "Téléphone",
+    "loginButton": "Se connecter",
+    "registerButton": "S'inscrire",
+    "resetPasswordButton": "Réinitialiser",
+    "verifyEmailTitle": "Vérifiez votre email",
+    "verifyEmailMessage": "Un email de vérification a été envoyé à {email}",
+    "emailVerified": "Email vérifié",
+    "verificationSuccessMessage": "Votre email a été vérifié avec succès",
+    "verificationError": "Erreur lors de la vérification",
+    "resendVerification": "Renvoyer l'email",
+    "resendCodeIn": "Renvoyer dans {seconds}s",
+    "checkSpamFolder": "N'oubliez pas de vérifier votre dossier spam",
+    "loginError": "Erreur de connexion",
+    "registrationError": "Erreur d'inscription",
+    "resetPasswordError": "Erreur de réinitialisation",
+    "passwordsDoNotMatch": "Les mots de passe ne correspondent pas"
+  },
+  "profile": {
+    "title": "Profil",
+    "addresses": "Adresses",
+    "orderHistory": "Historique des commandes",
+    "firstNamePlaceholder": "Prénom",
+    "lastNamePlaceholder": "Nom",
+    "emailPlaceholder": "Email",
+    "phonePlaceholder": "Téléphone",
+    "manageAddresses": "Gérer mes adresses",
+    "viewOrderHistory": "Voir mes commandes",
+    "addPhoto": "Ajouter une photo",
+    "updateError": "Erreur de mise à jour",
+    "saveButton": "Enregistrer"
+  },
+  "address": {
+    "labelPlaceholder": "Nom de l'adresse (ex: Maison, Bureau)",
+    "streetPlaceholder": "Rue",
+    "cityPlaceholder": "Ville",
+    "postalCodePlaceholder": "Code postal",
+    "countryPlaceholder": "Pays",
+    "additionalInfoPlaceholder": "Informations complémentaires",
+    "addButton": "Ajouter une adresse",
+    "setDefault": "Définir par défaut",
+    "delete": "Supprimer",
+    "default": "Par défaut",
+    "addNew": "Nouvelle adresse",
+    "loadError": "Erreur de chargement",
+    "addError": "Erreur d'ajout",
+    "defaultError": "Erreur de modification",
+    "deleteError": "Erreur de suppression"
+  },
+  "orders": {
+    "trackingNumber": "N° {number}",
+    "from": "De",
+    "to": "À",
+    "price": "{price} €",
+    "noOrders": "Aucune commande",
+    "loadError": "Erreur de chargement",
+    "status": {
+      "completed": "Terminée",
+      "cancelled": "Annulée",
+      "in_progress": "En cours"
+    }
+  },
+  "common": {
+    "continue": "Continuer",
+    "cancel": "Annuler",
+    "save": "Enregistrer",
+    "delete": "Supprimer",
+    "edit": "Modifier"
+  }
+}
